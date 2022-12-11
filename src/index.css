@@ -1,0 +1,20 @@
+@tailwind base;
+
+.gbl-adm-full {
+  @apply flex flex-col left-0 md:left-20 lg:left-72 relative w-full md:w-[calc(100%-80px)] lg:w-[calc(100%-288px)];
+}
+
+.gbl-adm-Nfull {
+  @apply flex flex-col left-0 md:left-20 lg:left-20 relative w-full md:w-[calc(100%-80px)];
+}
+
+.min-h-vh {
+  @apply min-h-[calc(100vh-7.56rem)];
+}
+
+.h-vh {
+  @apply h-[calc(100vh-7.56rem)];
+}
+
+@tailwind components;
+@tailwind utilities;
