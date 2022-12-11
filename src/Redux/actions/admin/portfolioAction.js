@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 import {
   SAVE_PORTFOLIO_A_FAIL,
   SAVE_PORTFOLIO_A_REQUEST,
@@ -13,7 +14,7 @@ import {
 } from "../../constants/admin/portfoliConstant";
 
 export const saveMyPortfolio = (formData) => async (dispatch) => {
-  const url = `/api/admin/portfolio`;
+  const url = `${BASE_URL}/api/admin/portfolio`;
   try {
     dispatch({ type: SAVE_PORTFOLIO_A_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -36,7 +37,7 @@ export const saveMyPortfolio = (formData) => async (dispatch) => {
 };
 
 export const getMyPortfolio = () => async (dispatch) => {
-  const url = `/api/admin/m/portfolio`;
+  const url = `${BASE_URL}/api/admin/m/portfolio`;
   try {
     dispatch({ type: MY_PORTFOLIO_A_REQUEST });
     const { data } = await axios.get(url, {
@@ -59,7 +60,7 @@ export const getMyPortfolio = () => async (dispatch) => {
 };
 
 export const updateMyPortfolio = (id, formData) => async (dispatch) => {
-  const url = `/api/admin/portfolio/update/${id}`;
+  const url = `${BASE_URL}/api/admin/portfolio/update/${id}`;
   try {
     dispatch({ type: UPDATE_PORTFOLIO_A_REQUEST });
     const { data } = await axios.put(url, formData, {

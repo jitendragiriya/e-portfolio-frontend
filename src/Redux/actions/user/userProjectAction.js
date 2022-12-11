@@ -18,9 +18,10 @@ import {
 } from "../../constants/user/userProjectConstant";
 
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 
 export const addUserProjectAction = (formData) => async (dispatch) => {
-  const url = `/api/user/addproject`;
+  const url = `${BASE_URL}/api/user/addproject`;
   try {
     dispatch({ type: ADD_PROJECT_U_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -42,7 +43,7 @@ export const addUserProjectAction = (formData) => async (dispatch) => {
 };
 
 export const getUserAllProjectAction = () => async (dispatch) => {
-  const url = `/api/user/allproject`;
+  const url = `${BASE_URL}/api/user/allproject`;
   try {
     dispatch({ type: ALL_PROJECT_U_REQUEST });
     const { data } = await axios.get(url, {
@@ -64,7 +65,7 @@ export const getUserAllProjectAction = () => async (dispatch) => {
 };
 
 export const getUserProjectAction = (id) => async (dispatch) => {
-  const url = `/api/user/project/${id}`;
+  const url = `${BASE_URL}/api/user/project/${id}`;
   try {
     dispatch({ type: PROJECT_DETAIL_U_REQUEST });
     const { data } = await axios.get(url, {
@@ -86,7 +87,7 @@ export const getUserProjectAction = (id) => async (dispatch) => {
 };
 
 export const userProjectUpdateAction = (id, formData) => async (dispatch) => {
-  const url = `/api/user/project/update/${id}`;
+  const url = `${BASE_URL}/api/user/project/update/${id}`;
   try {
     dispatch({ type: PROJECT_UPDATE_U_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -108,7 +109,7 @@ export const userProjectUpdateAction = (id, formData) => async (dispatch) => {
 };
 
 export const deleteUserProjectAction = (id) => async (dispatch) => {
-  const url = `/api/user/project/delete/${id}`;
+  const url = `${BASE_URL}/api/user/project/delete/${id}`;
   try {
     dispatch({ type: DELETE_PROJECT_U_REQUEST });
     const { data } = await axios.delete(

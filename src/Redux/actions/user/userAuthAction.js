@@ -14,10 +14,11 @@ import {
 } from "../../constants/user/userAuthContant";
 
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 
 
 export const userLogin = (formData) => async (dispatch) => {
-  const url = `/api/login`;
+  const url = `${BASE_URL}/api/login`;
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -40,7 +41,7 @@ export const userLogin = (formData) => async (dispatch) => {
 
 // REGISTER USER
 export const userSignup = (formData) => async (dispatch) => {
-  const url = `/api/signup`;
+  const url = `${BASE_URL}/api/signup`;
   try {
     dispatch({ type: USER_SIGNUP_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -69,7 +70,7 @@ export const userSignup = (formData) => async (dispatch) => {
 
 // LOGGEDD_IN USER
 export const loggedInUser = () => async (dispatch) => {
-  const url = `/api/user/me`;
+  const url = `${BASE_URL}/api/user/me`;
   try {
     dispatch({ type: LOGGED_IN_USER_REQUEST });
     const { data } = await axios.get(url, {
@@ -93,7 +94,7 @@ export const loggedInUser = () => async (dispatch) => {
 
 // LOGOUT USER
 export const userLogout = () => async (dispatch) => {
-  const url = `/api/logout`;
+  const url = `${BASE_URL}/api/logout`;
   try {
     await axios.get(url, {
       headers: {

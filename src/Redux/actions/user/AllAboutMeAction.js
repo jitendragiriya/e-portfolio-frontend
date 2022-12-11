@@ -6,9 +6,10 @@ import {
 } from "../../constants/userConstants";
 
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 
 export const getMyPortfolio = () => async (dispatch) => {
-  const url = `/portfolio/me`;
+  const url = `${BASE_URL}/api/portfolio/me`;
   try {
     dispatch({ type: ADMIN_ABOUT_REQUEST });
     const { data } = await axios.get(url, {

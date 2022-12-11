@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 import {
   CLEAR_ERRORS,
   ADMIN_PORTFOLIO_PB_FAIL,
@@ -8,7 +9,7 @@ import {
 
 
 export const getAdminPortfolioPublicAction = () => async (dispatch) => {
-  const url = `/api/portfolio/admin`;
+  const url = `${BASE_URL}/api/portfolio/admin`;
   try {
     dispatch({ type: ADMIN_PORTFOLIO_PB_REQUEST });
     const { data } = await axios.get(url, {

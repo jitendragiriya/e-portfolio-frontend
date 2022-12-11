@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 import {
   USER_PORTFOLIO_PB_REQUEST,
   CLEAR_ERRORS,
@@ -8,7 +9,7 @@ import {
 
 
 export const getUserPortfolioPublicAction = (user) => async (dispatch) => {
-  const url = `/api/portfolio/user/${user}`;
+  const url = `${BASE_URL}/api/portfolio/user/${user}`;
   try {
     dispatch({ type: USER_PORTFOLIO_PB_REQUEST });
     const { data } = await axios.get(url, {

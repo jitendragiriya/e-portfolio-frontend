@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 import {
   SAVE_P_INFO_U_FAIL,
   SAVE_P_INFO_U_REQUEST,
@@ -19,7 +20,7 @@ import {
 } from "../../constants/user/userPortfolioConstant";
 
 export const saveUserPersonalInfoAction = (formData) => async (dispatch) => {
-  const url = `/api/user/save/personalinfo`;
+  const url = `${BASE_URL}/api/user/save/personalinfo`;
   try {
     dispatch({ type: SAVE_P_INFO_U_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -42,7 +43,7 @@ export const saveUserPersonalInfoAction = (formData) => async (dispatch) => {
 };
 
 export const saveUserProfilePicAction = (formData) => async (dispatch) => {
-  const url = `/api/user/save/profilepic`;
+  const url = `${BASE_URL}/api/user/save/profilepic`;
   try {
     dispatch({ type: SAVE_PROFILE_PIC_U_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -65,7 +66,7 @@ export const saveUserProfilePicAction = (formData) => async (dispatch) => {
 };
 
 export const saveUserSkillsAction = (formData) => async (dispatch) => {
-  const url = `/api/user/save/skills`;
+  const url = `${BASE_URL}/api/user/save/skills`;
   try {
     dispatch({ type: SAVE_SKILLS_U_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -88,7 +89,7 @@ export const saveUserSkillsAction = (formData) => async (dispatch) => {
 };
 
 export const saveUserContactUrlAction = (formData) => async (dispatch) => {
-  const url = `/api/user/save/contacturl`;
+  const url = `${BASE_URL}/api/user/save/contacturl`;
   try {
     dispatch({ type: SAVE_CONTACT_URL_U_REQUEST });
     const { data } = await axios.post(url, formData, {
@@ -111,7 +112,7 @@ export const saveUserContactUrlAction = (formData) => async (dispatch) => {
 };
 
 export const getUserPortfolioAction = () => async (dispatch) => {
-  const url = `/api/user/m/portfolio`;
+  const url = `${BASE_URL}/api/user/m/portfolio`;
   try {
     dispatch({ type: MY_PORTFOLIO_U_REQUEST });
     const { data } = await axios.get(url, {

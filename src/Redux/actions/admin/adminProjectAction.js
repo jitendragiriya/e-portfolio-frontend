@@ -6,10 +6,11 @@ import {
 } from "../../constants/admin/adminProjectConstant";
 
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 
 
 export const deleteAdminProject = (id) => async (dispatch) => {
-  const url = `/api/admin/project/delete/${id}`;
+  const url = `${BASE_URL}/api/admin/project/delete/${id}`;
   try {
     dispatch({ type: DELETE_PROJECT_A_REQUEST });
     const { data } = await axios.delete(url, {

@@ -8,10 +8,11 @@ import {
   CLEAR_ERRORS,
 } from "../../constants/public/publicProjectConstant";
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 
 
 export const getPublicAllProjectAction = (user) => async (dispatch) => {
-  const url = `/api/public/project/${user}`;
+  const url = `${BASE_URL}/api/public/project/${user}`;
   try {
     dispatch({ type: ALL_PROJECT_PB_REQUEST });
     const { data } = await axios.get(url, {
@@ -33,7 +34,7 @@ export const getPublicAllProjectAction = (user) => async (dispatch) => {
 };
 
 export const getPublicProjectDetailAction = (id) => async (dispatch) => {
-  const url = `/api/public/project/${id}`;
+  const url = `${BASE_URL}/api/public/project/${id}`;
   try {
     dispatch({ type: PROJECT_DETAIL_PB_REQUEST });
     const { data } = await axios.get(url, {

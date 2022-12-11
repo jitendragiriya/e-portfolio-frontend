@@ -6,9 +6,10 @@ import {
 } from "../../constants/user/userContactConstant";
 
 import axios from "axios";
+import { BASE_URL } from "../../../constants";
 
 export const getAllUserContact = () => async (dispatch) => {
-  const url = `/api/user/allcontact`;
+  const url = `${BASE_URL}/api/user/allcontact`;
   try {
     dispatch({ type: ALL_CONTACT_U_REQUEST });
     const { data } = await axios.get(url, {
